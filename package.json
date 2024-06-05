@@ -1,0 +1,16 @@
+{
+  "name": "valentinestore",
+  "version": "1.0.0",
+  "description": "Desarrollo de una tienda virtual de ropa.",
+  "main": "servidor.js",
+  "scripts": {
+    "start": "node servidor.js",
+    "dev": "nodemon servidor.js"
+  },
+  "author": "MedardoCarpioCarlosAlas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
+  }
+}

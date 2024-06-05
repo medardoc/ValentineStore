@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine Store</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Valentine Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Clothes</a></li>
+                <li><a href="#productos">Bags</a></li>
+                <li><a href="#sobre-nosotros">Accessories</a></li>
+                <li><a href="/index/cart.html" class="cart-button">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="/img/pantalon1.avif" alt="Shop title image 1" height="450" width="700">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/Pantalon3.jpg" alt="Shop title image 2" height="450" width="700">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/pantalones4.jpg" alt="Shop title image 3" height="450" width="700">
+                    </div>
+                </div>
+            </div>
+            <h2>Shop title</h2>
+            <p>Subheading with description of your shopping site</p>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="products-container">
+                <div class="product">
+                    <img src="/img/pantalones4.jpg" alt="Product 1" height="150" width="200">
+                    <h3>Product</h3>
+                    <p>Description of first product</p>
+                    <span>$19.99</span>
+                    <button class="add-to-cart" data-product="Product 1" data-price="19.99">Agregar al carrito</button>
+                </div>
+                <div class="product">
+                    <img src="/img/Pantalones7.jpg" alt="Product 2" height="150" width="200">
+                    <h3>Product</h3>
+                    <p>Description of second product</p>
+                    <span>$19.99</span>
+                    <button class="add-to-cart" data-product="Product 2" data-price="19.99">Agregar al carrito</button>
+                </div>
+                <!-- Agrega más productos según sea necesario -->
+            </div>
+        </section>
+
+        <section id="otros-productos">
+            <h2>Otros Productos</h2>
+            <div class="products-container">
+                <div class="product">
+                    <img src="/img/pantalones5.jpg" alt="Product 3" height="150" width="200">
+                    <h3>Product</h3>
+                    <p>Description of third product</p>
+                    <span>$19.99</span>
+                    <button class="add-to-cart" data-product="Product 3" data-price="19.99">Agregar al carrito</button>
+                </div>
+                <div class="product">
+                    <img src="/img/pantalones6.jpeg" alt="Product 4" height="150" width="200">
+                    <h3>Product</h3>
+                    <p>Description of fourth product</p>
+                    <span>$19.99</span>
+                    <button class="add-to-cart" data-product="Product 4" data-price="19.99">Agregar al carrito</button>
+                </div>
+                <!-- Agrega más productos según sea necesario -->
+            </div>
+        </section>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una tienda ropa con artículos muy llamativos...</p>
+        </section>
+
+        <section id="contactos">
+            <h2>Contactos</h2>
+            <p>Correo: Valentinestore20</p>
+            <p>Teléfono: +56 920035</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Valentine Store</p>
+    </footer>
+
+    <script src="/JS/script.js"></script>
 </body>
 </html>
