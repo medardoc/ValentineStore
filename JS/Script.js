@@ -1,3 +1,5 @@
+/*Aqui codificamos el script para las funcionalidades y logica de la pagina, las cuales se encuentran referenciadas en cada archivo html*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelector('.slides');
     const slideArray = Array.from(document.querySelectorAll('.slide'));

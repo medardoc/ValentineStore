@@ -1,3 +1,5 @@
+/*Este archivo engloba toda la funcionalidad de la compra del carrito, de como interactua dentro del sistema*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartTotalElement = document.getElementById('cart-total');

@@ -1,3 +1,4 @@
+/*Aqui tenemos la codificacion del servidor para conectarse a traves de un puerto, mostrandonos asi el contenido de la pagina*/
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
