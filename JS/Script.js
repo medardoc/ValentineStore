@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(showNextSlide, 3000);
 
-    // Manejar el carrito de compras
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -35,6 +34,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
             localStorage.setItem('cart', JSON.stringify(cart));
             alert(`${product} ha sido agregado al carrito.`);
+        });
+    });
+
+    const modal = document.getElementById('emailModal');
+    const closeButton = document.querySelector('.close-button');
+    const emailForm = document.getElementById('emailForm');
+
+    document.querySelector('.cart-button').addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('El carrito está vacío.');
+        } else {
+            modal.style.display = 'block';
+        }
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    emailForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+
+        fetch('/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, cart })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Compra completada. Se ha enviado un correo de confirmación.');
+                localStorage.removeItem('cart');
+                modal.style.display = 'none';
+            } else {
+                alert('Hubo un problema al procesar su compra. Intente nuevamente.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un problema al procesar su compra. Intente nuevamente.');
         });
     });
 });

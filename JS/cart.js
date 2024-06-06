@@ -9,19 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsContainer.innerHTML = '';
         let total = 0;
 
-        cart.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'cart-item';
-            itemElement.innerHTML = `
-                <h3>${item.product}</h3>
-                <p>Precio: $${item.price}</p>
-                <p>Cantidad: ${item.quantity}</p>
-                <button class="remove-item" data-product="${item.product}">Eliminar</button>
-            `;
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>El carrito está vacío.</p>';
+        } else {
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <h3>${item.product}</h3>
+                    <p>Precio: $${item.price}</p>
+                    <p>Cantidad: ${item.quantity}</p>
+                    <button class="remove-item" data-product="${item.product}">Eliminar</button>
+                `;
 
-            cartItemsContainer.appendChild(itemElement);
-            total += item.price * item.quantity;
-        });
+                cartItemsContainer.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+        }
 
         cartTotalElement.textContent = total.toFixed(2);
     }
@@ -42,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     checkoutButton.addEventListener('click', () => {
-        alert('Procediendo al pago...');
+        if (cart.length === 0) {
+            alert('El carrito está vacío.');
+        } else {
+            alert('Procediendo al pago...');
+        }
     });
 });
