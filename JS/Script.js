@@ -1,6 +1,6 @@
 /*Aqui codificamos el script para las funcionalidades y logica de la pagina, las cuales se encuentran referenciadas en cada archivo html*/
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Slide functionality
     const slides = document.querySelector('.slides');
     const slideArray = Array.from(document.querySelectorAll('.slide'));
     let index = 0;
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(showNextSlide, 3000);
 
+    // Cart functionality
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Modal functionality
     const modal = document.getElementById('emailModal');
     const closeButton = document.querySelector('.close-button');
     const emailForm = document.getElementById('emailForm');
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const email = document.getElementById('email').value;
 
-        fetch('/send-email', {
+        fetch('/process-purchase', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

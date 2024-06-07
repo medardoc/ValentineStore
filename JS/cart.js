@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cart.length === 0) {
             alert('El carrito está vacío.');
         } else {
-            alert('Procediendo al pago...');
+            window.location.href = '/index/Formulario.html'; // Redirige a formulario.html
         }
     });
 });
