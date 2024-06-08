@@ -79,7 +79,7 @@ app.post('/process-purchase', (req, res) => {
             from: 'trabajo_tony@hotmail.com',
             to: email,
             subject: 'Compra realizada con éxito',
-            text: `Gracias por su compra!\n\nNombre: ${name} ${lastname}\n`
+            text: `Gracias por su compra, en las proxima hora uno de nuestros ejecutivos se contactara con usted para coordinar la entrega.`
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
