@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const connection = require('./bdd'); // Conexión a la base de datos
 
 const app = express();
-const PORT = 3000;
+const PORT = 3003;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,13 +33,13 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
-            user: 'trabajo_tony@hotmail.com',
-            pass: 'Ivanna2@2@'
+            user: 'example@hotmail.com', //Aqui pones tus credenciales para enviar el mensaje al destinario
+            pass: 'Example1234'
         }
     });
 
     const mailOptions = {
-        from: 'trabajo_tony@hotmail.com',
+        from: 'example@hotmail.com',
         to: email,
         subject: 'Compra Confirmada',
         text: `Su compra ha sido confirmada. Detalles del carrito: ${JSON.stringify(cart)}\n\nMonto total: $${totalAmount.toFixed(2)}`
@@ -70,13 +70,13 @@ app.post('/process-purchase', (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'hotmail',
             auth: {
-                user: 'trabajo_tony@hotmail.com',
-                pass: 'Ivanna2@2@'
+                user: 'example@hotmail.com', //Aqui pones tus credenciales para enviar el mensaje al destinario
+                pass: 'Example1234'
             }
         });
 
         const mailOptions = {
-            from: 'trabajo_tony@hotmail.com',
+            from: 'example@hotmail.com',
             to: email,
             subject: 'Compra realizada con éxito',
             text: `Gracias por su compra, en las proxima hora uno de nuestros ejecutivos se contactara con usted para coordinar la entrega.`
