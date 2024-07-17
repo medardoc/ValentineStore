@@ -12,3 +12,4 @@ Carrito de Compras y Proceso de Pago Seguro: Ofrecemos un carrito de compras int
 Respuesta Rápida y Soporte al Cliente: La página web es altamente receptiva y nuestro equipo de soporte está disponible para ayudar a los clientes en cualquier momento.
 
 ¡Explora nuestra colección hoy mismo y descubre la magia de ValentineStore! 🎉🛒
+![Captura de pantalla 2024-07-15 100317](https://github.com/user-attachments/assets/3383b811-644e-455c-9515-a50d9d658d18)
